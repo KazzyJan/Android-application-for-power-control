@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calculate">
+
+    <Button
+        android:id="@+id/menu"
+        android:layout_width="121dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="onClickMenu"
+        android:text="Меню"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="647dp"
+        android:layout_marginTop="64dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="890dp">
+
+                <TextView
+                    android:id="@+id/dailyCaloriesNorm"
+                    android:layout_width="173dp"
+                    android:layout_height="86dp"
+                    android:gravity="right"
+                    android:text="Загрузка..."
+                    android:textAlignment="gravity"
+                    android:textSize="28sp"
+                    app:autoSizeTextType="none"
+                    app:layout_constraintBottom_toTopOf="@+id/progressBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/head1" />
+
+                <TextView
+                    android:id="@+id/head1"
+                    android:layout_width="391dp"
+                    android:layout_height="33dp"
+                    android:background="#35387E"
+                    android:gravity="center"
+                    android:text="Норма калорий"
+                    android:textColor="#DDDDDD"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/head2"
+                    android:layout_width="391dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="200dp"
+                    android:background="#35387E"
+                    android:gravity="center"
+                    android:text="Расчитать приём пищи"
+                    android:textColor="#DDDDDD"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/head1" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="151dp"
+                    android:layout_height="53dp"
+                    android:onClick="onClickResult"
+                    android:text="Расчитать"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.938"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/head2"
+                    app:layout_constraintVertical_bias="0.681" />
+
+                <Button
+                    android:id="@+id/addButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="344dp"
+                    android:onClick="onClickAdd"
+                    android:text="Добавить"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/head2" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="399dp"
+                    android:layout_height="83dp"
+                    android:layout_marginTop="88dp"
+                    android:scaleY="5"
+                    app:layout_constraintBottom_toTopOf="@+id/head2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/head1"
+                    app:layout_constraintVertical_bias="0.689" />
+
+                <ListView
+                    android:id="@+id/calcListProd"
+                    android:layout_width="0dp"
+                    android:layout_height="298dp"
+                    app:layout_constraintBottom_toTopOf="@+id/addButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/head2" />
+
+                <TextView
+                    android:id="@+id/calInDayTextView"
+                    android:layout_width="137dp"
+                    android:layout_height="86dp"
+                    android:text="Загрузка..."
+                    android:textSize="28sp"
+                    app:autoSizeTextType="none"
+                    app:layout_constraintBottom_toTopOf="@+id/progressBar"
+                    app:layout_constraintEnd_toStartOf="@+id/dailyCaloriesNorm"
+                    app:layout_constraintHorizontal_bias="0.207"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/head1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/enterUserData"
+        android:layout_width="240dp"
+        android:layout_height="84dp"
+        android:onClick="onClickEnterData"
+        android:text="Ввести свои данные о продукте (если его нет в списке)"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/openProdList"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <Button
+        android:id="@+id/openProdList"
+        android:layout_width="240dp"
+        android:layout_height="84dp"
+        android:onClick="onClickAddFromBase"
+        android:text="Выбрать продукты из списка"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/enterDataLayout"
+        android:layout_width="407dp"
+        android:layout_height="403dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="98dp"
+            android:layout_height="31dp"
+            android:text="Название"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.086" />
+
+        <EditText
+            android:id="@+id/nameEnteredProd"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="Название"
+            android:inputType="textPersonName"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.716"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.07" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="162dp"
+            android:layout_height="53dp"
+            android:text="Калорийность (на 100 грамм)"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.008"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.17" />
+
+        <EditText
+            android:id="@+id/calEnteredProd"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Калорийность"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/nameEnteredProd"
+            app:layout_constraintVertical_bias="0.159" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAddEnteredData"
+            android:text="Добавить"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.808" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="165dp"
+            android:layout_height="63dp"
+            android:text="Вес (в граммах)"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.008"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.193" />
+
+        <EditText
+            android:id="@+id/weigthEnteredProd"
+            android:layout_width="200dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:hint="Вес"
+            android:inputType="number"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/calEnteredProd"
+            app:layout_constraintVertical_bias="0.174" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

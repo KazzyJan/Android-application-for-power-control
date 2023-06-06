@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CaloriesCalc</string>
+    <string name="singin_google">SingIn Google</string>
+    <string-array name="sex">
+        <item>Мужской</item>
+        <item>Женский</item>
+    </string-array>
+</resources>

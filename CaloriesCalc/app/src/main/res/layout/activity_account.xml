@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Account">
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickSignOut"
+        android:text="Выйти"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <Button
+        android:id="@+id/main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickMain"
+        android:text="Главная"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <Button
+        android:id="@+id/enterBoimetric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickEnterBio"
+        android:text="Ввести свои данные"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.973" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/biometricLayout"
+        android:layout_width="391dp"
+        android:layout_height="466dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="200dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="44dp"
+            android:text="Вес"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/showWeight"
+            android:layout_width="131dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="36dp"
+            android:text="Вес"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/weight"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="200dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="128dp"
+            android:text="Возраст"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/showAge"
+            android:layout_width="124dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="128dp"
+            android:text="Возраст"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/age"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/height"
+            android:layout_width="200dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="224dp"
+            android:text="Рост"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/showHeight"
+            android:layout_width="128dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="224dp"
+            android:text="Рост"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/height"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="200dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="312dp"
+            android:text="Пол"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/showGender"
+            android:layout_width="131dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="304dp"
+            android:text="Пол"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/gender"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/enterBiometricLayout"
+        android:layout_width="377dp"
+        android:layout_height="431dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ExtraText">
+
+        <TextView
+            android:id="@+id/enterGender"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="44dp"
+            android:text="Выберете пол"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/editAge"
+            app:layout_constraintHorizontal_bias="0.34"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enterHeight"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/editHeight"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="Рост"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.924"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.532" />
+
+        <TextView
+            android:id="@+id/enterHeight"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="44dp"
+            android:text="Введите рост"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/editAge"
+            app:layout_constraintHorizontal_bias="0.34"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enterAge"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/editWeight"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="Вес"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.924"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.063" />
+
+        <TextView
+            android:id="@+id/enterWeight"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="44dp"
+            android:text="Введите вес"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/editAge"
+            app:layout_constraintHorizontal_bias="0.34"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickDone"
+            android:text="Готово"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.949"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.96" />
+
+        <EditText
+            android:id="@+id/editAge"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="Возрост"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.924"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.266" />
+
+        <TextView
+            android:id="@+id/enterAge"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="44dp"
+            android:text="Введите возраст"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/editAge"
+            app:layout_constraintHorizontal_bias="0.34"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enterWeight"
+            tools:ignore="MissingConstraints" />
+
+        <Spinner
+            android:id="@+id/spinnerGender"
+            android:layout_width="144dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
+            android:entries="@array/sex"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editHeight"
+            tools:ignore="MissingConstraints" /><![CDATA[
+
+
+
+        />
+
+
+    ]]>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
